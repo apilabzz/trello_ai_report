@@ -21,7 +21,7 @@ export const validateToken = async (token) => {
     }
 };
 
-export const generateReport = async (token, type, data, question) => {
+export const generateReport = async (token, type, data, instructions) => {
     const url = type === 'text' ? `${API_URL}/module/5001` : `${API_URL}/module/1025`;
     const formattingPrompt = `
     <StrictInstructions>Provide Statistics on attached Data Only, Do not hallucinate or create false statistics.</StrictInstructions>
@@ -29,7 +29,7 @@ export const generateReport = async (token, type, data, question) => {
     - Think Very carefully, Take as long as you need.
     - Work as a Professional Data Analyst which can summarize data in well formatted html
     - Work like a Project Manager and Scrum Master, You are getting Task data with titles, description, dates etc - Write a proper summary and evaluation.
-    - ${question}
+    - ${instructions}
     </Instructions>
     `;
     
@@ -38,7 +38,7 @@ export const generateReport = async (token, type, data, question) => {
         : { 
             rawData: JSON.stringify(data), 
             instruction: `
-            <Instructions>${question}</Instructions> 
+            <Instructions>${instructions}</Instructions> 
             <StrictInstructions>Provide Statistics on attached Data Only, Do not hallucinate or create false statistics</StrictInstructions>
             <FinalOutput>
             - Generate a small HTML report with only two charts in same vertical line. 
@@ -47,20 +47,14 @@ export const generateReport = async (token, type, data, question) => {
             </FinalOutput>` };
 
     try {
-        const controller = new AbortController();
-        const timeoutId = setTimeout(() => controller.abort(), 120000); // 120 seconds timeout
-
         const response = await fetch(url, {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json',
                 'Authorization': `Bearer ${token}`
             },
-            body: JSON.stringify(postData),
-            signal: controller.signal
+            body: JSON.stringify(postData)
         });
-        
-        clearTimeout(timeoutId);
         
         if (!response.ok) {
             const errorData = await response.json();
@@ -70,9 +64,6 @@ export const generateReport = async (token, type, data, question) => {
         const result = await response.json();
         return result.response;
     } catch (error) {
-        if (error.name === 'AbortError') {
-            throw new Error('Request timed out. Please try again later.');
-        }
         throw error;
     }
 };

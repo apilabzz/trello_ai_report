@@ -7,16 +7,16 @@ function App() {
       'board-buttons': function(t, options) {
         return [{
           icon: {
-            dark: 'https://glistening-choux-190890.netlify.app/logo512.png',
-            light: 'https://glistening-choux-190890.netlify.app/logo512.png'
+            dark: 'https://trello-report.netlify.app/logo512.png',
+            light: 'https://trello-report.netlify.app/logo512.png'
           },
-          text: 'Generate AI Report',
+          text: 'Trello Lens',
           callback: function(t) {
-            return t.modal({
-              url: './index.html',
-              height: 600,
-              width: 800,
-              title: 'AI Powered Reports - by API Labz'
+            return t.popup({
+              title: 'AI Report Generator',
+              url: t.signUrl('./index.html'),
+              width: 340,
+              height: 400,
             });
           }
         }];
