@@ -11,7 +11,7 @@
     X-Frame-Options = "DENY"
     X-Content-Type-Options = "nosniff"
     Referrer-Policy = "no-referrer-when-downgrade"
-    Feature-Policy = "camera 'none'; display-capture 'none'; document-domain 'none'; geolocation 'none'; microphone 'none'; payment 'none'; usb 'none'"
+    Feature-Policy = "camera 'none'; display-capture 'none'; geolocation 'none'; microphone 'none'; payment 'none'; usb 'none'"
     Permissions-Policy = "camera=(), display-capture=(), document-domain=(), geolocation=(), microphone=(), payment=(), usb=()"
 
 [[headers]]
