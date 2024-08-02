@@ -2,7 +2,7 @@
   "name": "AI Powered Reports",
   "details": "Generate AI-powered reports from your Trello boards",
   "icon": {
-    "url": "https://glistening-choux-190890.netlify.app/logo192.png"
+    "url": "https://main--trello-lens.netlify.app//logo192.png"
   },
   "author": "Your Name",
   "capabilities": [
@@ -14,7 +14,7 @@
   ],
   "connectors": {
     "iframe": {
-      "url": "https://glistening-choux-190890.netlify.app"
+      "url": "https://main--trello-lens.netlify.app"
     }
   }
 }
