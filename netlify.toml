@@ -1,31 +1,31 @@
-# Basic build settings
-[build]
-  publish = "public"
-  command = "npm run build"
+# # Basic build settings
+# [build]
+#   publish = "public"
+#   command = "npm run build"
 
-# Headers
-[[headers]]
-  for = "/*"
-  [headers.values]
-    Content-Security-Policy = "default-src 'self'; script-src 'self' https://main--trello-lens.netlify.app https://p.trellocdn.com; style-src 'unsafe-inline' 'self'; img-src 'self' data: https:; connect-src 'self' https:; manifest-src 'self' https://p.trellocdn.com"
-    X-Frame-Options = "DENY"
-    X-Content-Type-Options = "nosniff"
-    Referrer-Policy = "no-referrer-when-downgrade"
-    Permissions-Policy = "camera=(), display-capture=(), geolocation=(), microphone=(), payment=(), usb=()"
+# # Headers
+# [[headers]]
+#   for = "/*"
+#   [headers.values]
+#     Content-Security-Policy = "default-src 'self'; script-src 'self' https://main--trello-lens.netlify.app https://p.trellocdn.com; style-src 'unsafe-inline' 'self'; img-src 'self' data: https:; connect-src 'self' https:; manifest-src 'self' https://p.trellocdn.com"
+#     X-Frame-Options = "DENY"
+#     X-Content-Type-Options = "nosniff"
+#     Referrer-Policy = "no-referrer-when-downgrade"
+#     Permissions-Policy = "camera=(), display-capture=(), geolocation=(), microphone=(), payment=(), usb=()"
 
-[[headers]]
-  for = "/favicon.ico"
-  [headers.values]
-    Cache-Control = "public, max-age=31536000"
+# [[headers]]
+#   for = "/favicon.ico"
+#   [headers.values]
+#     Cache-Control = "public, max-age=31536000"
 
-[[headers]]
-  for = "/manifest.json"
-  [headers.values]
-    Cache-Control = "public, max-age=31536000"
+# [[headers]]
+#   for = "/manifest.json"
+#   [headers.values]
+#     Cache-Control = "public, max-age=31536000"
 
-[[headers]]
-  for = "/logo192.png"
-  [headers.values]
-    Cache-Control = "public, max-age=31536000"
+# [[headers]]
+#   for = "/logo192.png"
+#   [headers.values]
+#     Cache-Control = "public, max-age=31536000"
 
 
