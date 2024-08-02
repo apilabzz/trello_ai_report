@@ -7,7 +7,7 @@
 [[headers]]
   for = "/*"
   [headers.values]
-    Content-Security-Policy = "default-src 'self'; script-src 'self' https://main--trello-lens.netlify.app https://p.trellocdn.com; style-src 'unsafe-inline' 'self'; img-src 'self' data: https:; connect-src 'self' https:; manifest-src "https://p.trellocdn.com";
+    Content-Security-Policy = "default-src 'self'; script-src 'self' https://main--trello-lens.netlify.app https://p.trellocdn.com; style-src 'unsafe-inline' 'self'; img-src 'self' data: https:; connect-src 'self' https:; manifest-src https://p.trellocdn.com;
     X-Frame-Options = "DENY"
     X-Content-Type-Options = "nosniff"
     Referrer-Policy = "no-referrer-when-downgrade"
