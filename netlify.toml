@@ -7,11 +7,11 @@
 [[headers]]
   for = "/*"
   [headers.values]
-    Content-Security-Policy = "default-src https://main--trello-lens.netlify.app; script-src main--trello-lens.netlify.app https://p.trellocdn.com/power-up.min.js img-src data: https: http:; font-src 'self' data:;"
+    Content-Security-Policy = "default-src 'self'; script-src 'self' https://main--trello-lens.netlify.app https://p.trellocdn.com; style-src 'unsafe-inline' 'self'; img-src 'self' data: https:; connect-src 'self' https:;"
     X-Frame-Options = "DENY"
     X-Content-Type-Options = "nosniff"
     Referrer-Policy = "no-referrer-when-downgrade"
-    Feature-Policy = "camera 'none'; display-capture 'none'; geolocation 'none'; microphone 'none'; payment 'none'; usb 'none'"
+    Feature-Policy = "camera 'none'; display-capture 'none'; document-domain 'none'; geolocation 'none'; microphone 'none'; payment 'none'; usb 'none'"
     Permissions-Policy = "camera=(), display-capture=(), document-domain=(), geolocation=(), microphone=(), payment=(), usb=()"
 
 [[headers]]
