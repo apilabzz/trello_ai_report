@@ -11,7 +11,7 @@
     X-Frame-Options = "DENY"
     X-Content-Type-Options = "nosniff"
     Referrer-Policy = "no-referrer-when-downgrade"
-    Permissions-Policy = "camera=(), display-capture=(), document-domain=(), geolocation=(), microphone=(), payment=(), usb=()"
+    Permissions-Policy = "camera=(), display-capture=(), geolocation=(), microphone=(), payment=(), usb=()"
 
 [[headers]]
   for = "/favicon.ico"
